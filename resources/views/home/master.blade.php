@@ -33,8 +33,6 @@
         @yield('content')
         @livewireScripts
         
-
-
         <!-- Footer Start -->
         @include('home/partials/footer')
         <!-- Footer End -->
