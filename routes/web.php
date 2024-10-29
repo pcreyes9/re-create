@@ -30,7 +30,7 @@ Route::get('/', function () {
     Artisan::call('route:clear');
     Artisan::call('config:clear');
     Artisan::call('view:clear');
-    return view('home/landing');
+    return view('home/pages/landing');
 })->name('home');
 
 Route::get('/venue', function () {

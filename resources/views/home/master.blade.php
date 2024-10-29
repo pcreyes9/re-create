@@ -1,76 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
-
-        <!-- Basic Page Needs
-        ================================================== -->
         <meta charset="utf-8">
-        {{-- <title>Philippine Society of Anesthesiologists</title> --}}
-
-        <!-- Mobile Specific Metas
-        ================================================== -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="Construction Html5 Template">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-
-        <!-- Favicon
-        ================================================== -->
+        <title>@yield('title')</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
         <link rel="icon" type="image/png" href="images/ACA_LOGO.png">
-
-        <!-- CSS
-        ================================================== -->
-        @include('home.css')
-
-        @livewireStyles
+        @include('home/partials/css')
     </head>
+
     <body>
-        <div class="body-inner">
-            @include('home.top-info')
 
-            <!--/ Topbar end -->
-            <!-- Header start -->
-            
-            <header id="header" class="header-one">
-                <title>@yield('title') | 24th ACA Congress</title>
-                @include('home.header')
-                @include('home.menu')
+        <!-- Spinner Start -->
+        
+        <!-- Spinner End -->
+        @include('home/partials/spinner')
+        <!-- Topbar Start -->
+        @include('home/partials/topbar')
+        <!-- Topbar End -->
 
-                <!--/ Navigation end -->
-            </header>
-            
-            <!--/ Header end -->
-            
-            {{-- style="background-image:url(images/bg/master.jpg); " --}}
+        <!-- Navbar & Hero Start -->
+        @include('home/partials/navbar')
+        <!-- Navbar & Hero End -->
 
-            <div style="overflow: hidden; position: relative;">
-                <img class="master-bg" src="images/bg/master.jpg" alt="">
-                <div style="position: relative">
-                    @yield('content')
+        <!-- Modal Search Start -->
+        @include('home/partials/search')
+        <!-- Modal Search End -->
 
 
-                    {{-- <div class="container">
-                        <h1 class="text-center m-5">THIS SITE IS UPDATING...</h1>
-                    </div> --}}
-                    
-                </div>
-            </div>
+        @yield('content')
+        @livewireScripts
+        
 
-            
 
-            {{-- @yield('content') --}}
-            @livewireScripts
+        <!-- Footer Start -->
+        @include('home/partials/footer')
+        <!-- Footer End -->
+        
+        <!-- Copyright Start -->
+        @include('home/partials/copyright')
+        <!-- Copyright End -->
 
-            <footer id="footer" class="footer bg-overlay">
-                @include('home.footer')
-            </footer><!-- Footer end -->
 
-            
-            <!-- Javascript Files
-            ================================================== -->
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
 
-            <!-- initialize jQuery Library -->
-            @include('home.scripts')
-            
-        </div><!-- Body inner end -->
+        
+        <!-- JavaScript Libraries -->
+        @include('home/partials/script')
+        
+
+        <!-- Template Javascript -->
+        <script src="home/js/main.js"></script>
     </body>
 </html>
